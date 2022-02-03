@@ -5,12 +5,13 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 public class Waiter {
     private static final int WAIT_FOR_ELEMENT_SECONDS = 10;
-    private static final int POLLING_TIME_DURATION_MILLIS = 100;
+    private static final int POLLING_TIME_DURATION_MILLIS = 500;
     private Wait<WebDriver> wait = new FluentWait<>(Driver.getDriver())
             .withTimeout(Duration.ofSeconds(WAIT_FOR_ELEMENT_SECONDS, POLLING_TIME_DURATION_MILLIS))
             .ignoring(NoSuchElementException.class)
@@ -32,4 +33,6 @@ public class Waiter {
     public void waitUntilElementToBePresent(By locator) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
+    public void isElementPresent(By locator){
+}
 }
