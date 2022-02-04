@@ -5,9 +5,10 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public final class ElementHelper {
-private ElementHelper(){}
+    private ElementHelper() {
+    }
 
-    public static  boolean isElementPresent(List<String> expectedElements, List<WebElement> actualElements) {
+    public static boolean isElementPresent(List<String> expectedElements, List<WebElement> actualElements) {
         boolean check = false;
         for (String expectedElement : expectedElements) {
             check = false;
@@ -24,6 +25,7 @@ private ElementHelper(){}
         }
         return check;
     }
+
     public static boolean isElementNotNullNotEmpty(List<WebElement> elements) {
         for (WebElement element : elements) {
             if (element == null || element.getText().isEmpty()) {

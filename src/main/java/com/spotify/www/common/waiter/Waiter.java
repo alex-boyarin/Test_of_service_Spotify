@@ -5,7 +5,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -33,6 +32,7 @@ public class Waiter {
     public void waitUntilElementToBePresent(By locator) {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
-    public void isElementPresent(By locator){
-}
+
+    public void isElementPresent(By locator) {
+    }
 }

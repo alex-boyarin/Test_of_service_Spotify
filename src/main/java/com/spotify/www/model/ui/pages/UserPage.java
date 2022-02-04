@@ -1,6 +1,5 @@
 package com.spotify.www.model.ui.pages;
 
-import com.spotify.www.common.driver.Driver;
 import com.spotify.www.common.helper.TabSwitch;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -45,7 +44,7 @@ public class UserPage extends BasePage {
 
     public UserAccount clickAccountSection() {
         waiter.waitUntilElementToBeVisible(accountSection).click();
-        TabSwitch.tabSwitch(Driver.getDriver());
+        TabSwitch.tabSwitch(driver);
         return new UserAccount();
     }
 
@@ -54,9 +53,10 @@ public class UserPage extends BasePage {
         return this;
     }
 
-    public UserPage clickTariffChangeSection() {
+    public UserTariff clickTariffChangeSection() {
         waiter.waitUntilElementToBeVisible(tariffChangeSection).click();
-        return this;
+        TabSwitch.tabSwitchOnParent(driver);
+        return new UserTariff();
     }
 
     public UserPage clickLogOutButton() {

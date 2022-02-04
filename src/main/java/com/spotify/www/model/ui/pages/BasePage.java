@@ -8,7 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 public abstract class BasePage {
     protected WebDriver driver = Driver.getDriver();
     protected Waiter waiter = new Waiter();
-    protected BasePage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+
+
+    protected BasePage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 }

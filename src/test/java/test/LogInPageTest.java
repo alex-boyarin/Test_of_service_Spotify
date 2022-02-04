@@ -32,7 +32,7 @@ class LogInPageTest {
                 .clickUserLinkButton()
                 .clickAccountSection()
                 .isUserData();
-        System.out.println(actualResult);
+        //System.out.println(actualResult);
         assertTrue(actualResult);
         new UserPage().clickUserLinkButton().clickLogOutButton();
     }
