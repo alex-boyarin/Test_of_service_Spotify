@@ -36,5 +36,4 @@ public class Driver {
     public static void scrollPageUntilElementIsVisible(WebElement element) {
         scrollPage.executeScript("arguments[0].scrollIntoView();", element);
     }
-
 }

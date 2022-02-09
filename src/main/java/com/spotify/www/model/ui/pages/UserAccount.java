@@ -13,7 +13,7 @@ public class UserAccount extends BasePage {
 
     private final By USER_DATA = By.xpath("//tbody");
 
-    @FindBy(xpath = "//li[@id='overview']")
+    @FindBy(id = "overview")
     private WebElement userDataSection;
 
     public boolean isUserData() {

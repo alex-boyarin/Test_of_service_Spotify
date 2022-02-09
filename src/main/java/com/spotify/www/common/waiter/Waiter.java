@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.Wait;
 import java.time.Duration;
 
 public class Waiter {
-    private static final int WAIT_FOR_ELEMENT_SECONDS = 10;
-    private static final int POLLING_TIME_DURATION_MILLIS = 500;
+    private static final int WAIT_FOR_ELEMENT_SECONDS = 5;
+    private static final int POLLING_TIME_DURATION_MILLIS = 200;
     private Wait<WebDriver> wait = new FluentWait<>(Driver.getDriver())
             .withTimeout(Duration.ofSeconds(WAIT_FOR_ELEMENT_SECONDS, POLLING_TIME_DURATION_MILLIS))
             .ignoring(NoSuchElementException.class)
@@ -25,12 +25,9 @@ public class Waiter {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void waitUntilElementToBeInvisible(WebElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
 
-    public void waitUntilElementToBePresent(By locator) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    public WebElement waitUntilVisibilityOfElementLocated(By locator) {
+       return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public void isElementPresent(By locator) {

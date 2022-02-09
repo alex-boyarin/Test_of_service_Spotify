@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class LogInPage extends BasePage {
     private final String USER_EMAIL = "alex25091986@gmail.com";
-    private final String PASSWORD = "25091986";
+    private final String PASSWORD = "68919052";
     @FindBy(id = "login-username")
     private WebElement userEmail;
     @FindBy(id = "login-password")

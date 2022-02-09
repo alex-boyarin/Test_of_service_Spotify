@@ -6,6 +6,10 @@ import org.openqa.selenium.support.FindBy;
 public class StartPage extends BasePage {
 
     private static final String START_PAGE_URL = "https://open.spotify.com";
+
+    @FindBy(xpath = "//div[@id='onetrust-close-btn-container']/button")
+    private WebElement closeCookie;
+
     @FindBy(xpath = "//button[@data-testid='login-button']")
     private WebElement logIn;
 
@@ -17,5 +21,9 @@ public class StartPage extends BasePage {
     public LogInPage clickLogInButton() {
         waiter.waitUntilElementToBeClickable(logIn).click();
         return new LogInPage();
+    }
+    public StartPage closeCookie()  {
+        waiter.waitUntilElementToBeVisible(closeCookie).click();
+        return this;
     }
 }

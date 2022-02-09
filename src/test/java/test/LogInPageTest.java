@@ -5,12 +5,10 @@ import com.spotify.www.model.ui.pages.StartPage;
 import com.spotify.www.model.ui.pages.UserPage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.WebDriver;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class LogInPageTest {
@@ -26,34 +24,48 @@ class LogInPageTest {
     public void test() {
 
         boolean actualResult = startPage
+                .closeCookie()
                 .clickLogInButton()
                 .fillLogInForm()
                 .clickLogInButton()
                 .clickUserLinkButton()
                 .clickAccountSection()
                 .isUserData();
-        //System.out.println(actualResult);
         assertTrue(actualResult);
-        new UserPage().clickUserLinkButton().clickLogOutButton();
+        // new UserPage().clickUserLinkButton().clickLogOutButton();
     }
 
-
-    @ParameterizedTest
-    @ValueSource(strings = {"Alex"})
-    public void test3(String expectedName) {
-        String actualName = new StartPage()
+    @Test
+    public void addAlbum() {
+        startPage//.closeCookie()
                 .clickLogInButton()
                 .fillLogInForm()
                 .clickLogInButton()
-                .clickUserLinkButton()
-                .clickProfileSection()
-                .getUserName();
-        assertEquals(expectedName, actualName);
+                .searchSection()
+                .searchMusic()
+                .searchResult()
+                .addAlbum();
+    }
+
+    @Test
+    public void addSinger() {
+        startPage.closeCookie()
+                .clickLogInButton()
+                .fillLogInForm()
+                .clickLogInButton()
+                .searchSection()
+                .searchMusic()
+                .searchResult()
+                .addSinger();
+    }
+
+    @BeforeEach
+    public void logOut() {
         new UserPage().clickUserLinkButton().clickLogOutButton();
     }
 
     @AfterAll
     public static void close() {
-        driver.close();
+       //  driver.close();
     }
 }
