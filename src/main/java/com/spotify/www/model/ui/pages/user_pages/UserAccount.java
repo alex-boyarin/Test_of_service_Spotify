@@ -1,8 +1,9 @@
-package com.spotify.www.model.ui.pages;
+package com.spotify.www.model.ui.pages.user_pages;
 
 import com.spotify.www.common.driver.Driver;
 import com.spotify.www.common.helper.ElementHelper;
 import com.spotify.www.common.helper.TabSwitch;
+import com.spotify.www.model.ui.pages.base_page.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -1,6 +1,7 @@
-package com.spotify.www.model.ui.pages;
+package com.spotify.www.model.ui.pages.user_pages;
 
 import com.spotify.www.common.helper.TabSwitch;
+import com.spotify.www.model.ui.pages.base_page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -24,21 +25,7 @@ public class UserPage extends BasePage {
     @FindBy(xpath = "//span[contains(text(),'Моя медиатека')]")
     private WebElement myMedia;
 
-
-
-
-//    @FindBy(xpath = "//span/h1")
-//    private WebElement userName;
-
-//    public UserPage closePopUp() {
-//        waiter.waitUntilElementToBeClickable(closePopUp).click();
-//        return this;
-//    }
-
-
-
     public UserPage clickUserLinkButton() {
-
         waiter.waitUntilElementToBeClickable(userLinkButton).click();
         return this;
     }
@@ -62,14 +49,12 @@ public class UserPage extends BasePage {
     }
 
     public Search searchSection()  {
-
         waiter.waitUntilElementToBeVisible(searchSection).click();
         return new Search();
     }
 
 
     public MyMedia myMediaSection() {
-
         waiter.waitUntilElementToBeClickable(myMedia).click();
         return new MyMedia();
     }

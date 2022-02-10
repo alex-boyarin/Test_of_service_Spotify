@@ -9,10 +9,11 @@ import org.openqa.selenium.support.ui.Wait;
 import java.time.Duration;
 
 public class Waiter {
-    private static final int WAIT_FOR_ELEMENT_SECONDS = 5;
-    private static final int POLLING_TIME_DURATION_MILLIS = 200;
+    private static final int WAIT_FOR_ELEMENT_SECONDS = 10;
+    private static final int POLLING_TIME_DURATION_MILLIS = 2000;
     private Wait<WebDriver> wait = new FluentWait<>(Driver.getDriver())
-            .withTimeout(Duration.ofSeconds(WAIT_FOR_ELEMENT_SECONDS, POLLING_TIME_DURATION_MILLIS))
+            .withTimeout(Duration.ofSeconds(WAIT_FOR_ELEMENT_SECONDS))
+            .pollingEvery(Duration.ofMillis(POLLING_TIME_DURATION_MILLIS))
             .ignoring(NoSuchElementException.class)
             .ignoring(ElementNotInteractableException.class)
             .ignoring(StaleElementReferenceException.class);
@@ -25,11 +26,7 @@ public class Waiter {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-
     public WebElement waitUntilVisibilityOfElementLocated(By locator) {
-       return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
-
-    public void isElementPresent(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 }

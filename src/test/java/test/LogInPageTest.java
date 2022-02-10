@@ -1,11 +1,10 @@
 package test;
 
 import com.spotify.www.common.driver.Driver;
-import com.spotify.www.model.ui.pages.StartPage;
-import com.spotify.www.model.ui.pages.UserPage;
+import com.spotify.www.model.ui.pages.login_page.StartPage;
+import com.spotify.www.model.ui.pages.user_pages.UserPage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
@@ -21,7 +20,7 @@ class LogInPageTest {
     }
 
     @Test
-    public void test() {
+    public void aest() {
 
         boolean actualResult = startPage
                 .closeCookie()
@@ -32,23 +31,11 @@ class LogInPageTest {
                 .clickAccountSection()
                 .isUserData();
         assertTrue(actualResult);
-        // new UserPage().clickUserLinkButton().clickLogOutButton();
+        new UserPage().clickUserLinkButton().clickLogOutButton();
     }
 
     @Test
-    public void addAlbum() {
-        startPage//.closeCookie()
-                .clickLogInButton()
-                .fillLogInForm()
-                .clickLogInButton()
-                .searchSection()
-                .searchMusic()
-                .searchResult()
-                .addAlbum();
-    }
-
-    @Test
-    public void addSinger() {
+    public void bddAlbum() {
         startPage.closeCookie()
                 .clickLogInButton()
                 .fillLogInForm()
@@ -56,16 +43,38 @@ class LogInPageTest {
                 .searchSection()
                 .searchMusic()
                 .searchResult()
-                .addSinger();
-    }
-
-    @BeforeEach
-    public void logOut() {
+                .addAlbum();
         new UserPage().clickUserLinkButton().clickLogOutButton();
     }
 
+    @Test
+    public void cddSinger() {
+        startPage.closeCookie()
+                .clickLogInButton()
+                .fillLogInForm()
+                .clickLogInButton()
+                .searchSection()
+                .searchSinger()
+                .searchResult()
+                .addSinger();
+        new UserPage().clickUserLinkButton().clickLogOutButton();
+    }
+
+   @Test
+   public void dddSong(){
+        startPage.closeCookie()
+                .clickLogInButton()
+                .fillLogInForm()
+                .clickLogInButton()
+                .searchSection()
+                .searchSong()
+                .searchResult()
+                .addSong();
+       new UserPage().clickUserLinkButton().clickLogOutButton();
+   }
+
     @AfterAll
     public static void close() {
-       //  driver.close();
+        driver.close();
     }
 }

@@ -1,4 +1,4 @@
-package com.spotify.www.model.ui.pages;
+package com.spotify.www.model.ui.pages.base_page;
 
 import com.spotify.www.common.driver.Driver;
 import com.spotify.www.common.waiter.Waiter;

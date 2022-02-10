@@ -1,5 +1,7 @@
 package com.spotify.www.common.helper;
 
+import com.spotify.www.common.driver.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -34,5 +36,7 @@ public final class ElementHelper {
         }
         return true;
     }
-
+    public static boolean isElementPresent(By locator) {
+        return !(Driver.getDriver().findElements(locator).isEmpty());
+    }
 }

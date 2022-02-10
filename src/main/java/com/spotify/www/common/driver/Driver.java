@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+
 public class Driver {
     private static WebDriver driver;
     private static JavascriptExecutor scrollPage;
@@ -19,6 +21,7 @@ public class Driver {
         driver = new ChromeDriver();
         scrollPage = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5,2000));
     }
 
     public static WebDriver getDriver() {

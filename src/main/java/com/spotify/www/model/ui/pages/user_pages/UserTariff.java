@@ -1,5 +1,6 @@
-package com.spotify.www.model.ui.pages;
+package com.spotify.www.model.ui.pages.user_pages;
 
+import com.spotify.www.model.ui.pages.base_page.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
