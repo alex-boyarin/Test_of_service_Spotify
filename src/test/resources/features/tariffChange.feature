@@ -1,0 +1,1 @@
+Feature: Сhange of tariff using an invalid card

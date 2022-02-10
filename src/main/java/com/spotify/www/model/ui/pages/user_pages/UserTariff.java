@@ -46,10 +46,10 @@ public class UserTariff extends BasePage {
         return this;
     }
 
-    public UserTariff FillOutCardForm() {
-        waiter.waitUntilElementToBeVisible(cardNumber).sendKeys("1234567891234567");
-        waiter.waitUntilElementToBeVisible(expiryDate).sendKeys("1224");
-        waiter.waitUntilElementToBeVisible(securityCode).sendKeys("123");
+    public UserTariff FillOutCardForm(String number, String date, String code) {
+        waiter.waitUntilElementToBeVisible(cardNumber).sendKeys(number);
+        waiter.waitUntilElementToBeVisible(expiryDate).sendKeys(date);
+        waiter.waitUntilElementToBeVisible(securityCode).sendKeys(code);
         return this;
     }
 

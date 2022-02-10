@@ -1,6 +1,7 @@
 package com.spotify.www.model.ui.pages.user_pages;
 
 import com.spotify.www.model.ui.pages.base_page.BasePage;
+import org.checkerframework.checker.index.qual.SubstringIndexUnknown;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,29 +9,18 @@ import org.openqa.selenium.support.FindBy;
 public class Search extends BasePage {
 
 
-
     @FindBy(xpath = "//form[@role='search']/input")
     private WebElement searchBox;
 
-    private By bestResult = By.xpath("//section[@aria-label='Лучший результат']//a");
+    private String result = "//section[@aria-label='%s']//a";//Лучший результат
 
-    public Search searchMusic() {
-        waiter.waitUntilElementToBeVisible(searchBox).sendKeys("Bohemian Rhapsody (The Original Soundtrack)");
+    public Search searchMusic(String string) {
+        waiter.waitUntilElementToBeVisible(searchBox).sendKeys(string);//"Bohemian Rhapsody (The Original Soundtrack)"//"Rammstein"//"Родина"
         return this;
     }
 
-    public Search searchSinger() {
-        waiter.waitUntilElementToBeVisible(searchBox).sendKeys("Rammstein");
-        return this;
-    }
-
-    public Search searchSong() {
-        waiter.waitUntilElementToBeVisible(searchBox).sendKeys("Родина");
-        return this;
-    }
-
-    public MyMedia searchResult() {
-        waiter.waitUntilVisibilityOfElementLocated(bestResult)
+    public MyMedia searchResult(String bestResult) {
+        waiter.waitUntilVisibilityOfElementLocated(By.xpath(String.format(result, bestResult)))
                 .click();
         return new MyMedia();
     }
