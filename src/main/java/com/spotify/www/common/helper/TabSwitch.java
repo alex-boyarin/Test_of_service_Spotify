@@ -7,12 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class TabSwitch {
-    private static List<String> tabs = new ArrayList<>(Driver.getDriver().getWindowHandles());
+    private static List<String> tabs ;
 
     private TabSwitch() {
     }
 
     public static void tabSwitch(WebDriver driver) {
+        tabs = new ArrayList<>(Driver.getDriver().getWindowHandles());
         driver.switchTo().window(tabs.get(1));
     }
 

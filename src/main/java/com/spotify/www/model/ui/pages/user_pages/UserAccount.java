@@ -21,7 +21,7 @@ public class UserAccount extends BasePage {
         waiter.waitUntilElementToBeClickable(userDataSection).click();
         Driver.scrollPageUntilElementIsVisible(userDataSection);
         List<WebElement> actualElement = driver.findElements(USER_DATA);
-        boolean result = ElementHelper.isElementPresent(expectedElement,actualElement);
+        boolean result = ElementHelper.isListElementPresent(expectedElement,actualElement);
         TabSwitch.tabSwitchOnParent(driver);
         return result;
     }

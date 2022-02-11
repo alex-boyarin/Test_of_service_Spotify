@@ -2,11 +2,9 @@ package com.spotify.www.stepDefs.ui;
 
 import com.spotify.www.model.ui.pages.login_page.LogInPage;
 import com.spotify.www.model.ui.pages.login_page.StartPage;
-import com.spotify.www.model.ui.pages.manage_steps.ManageAccountSteps;
 import com.spotify.www.model.ui.pages.user_pages.UserAccount;
 import com.spotify.www.model.ui.pages.user_pages.UserPage;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;

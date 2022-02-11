@@ -1,11 +1,10 @@
 package com.spotify.www.model.ui.pages.user_pages;
 
-import com.spotify.www.common.helper.TabSwitch;
 import com.spotify.www.model.ui.pages.base_page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.spotify.www.common.helper.TabSwitch.*;
+import static com.spotify.www.common.helper.TabSwitch.tabSwitch;
 
 public class UserPage extends BasePage {
 
@@ -42,7 +41,6 @@ public class UserPage extends BasePage {
     public UserTariff clickTariffChangeSection() {
         waiter.waitUntilElementToBeClickable(tariffChangeSection).click();
         tabSwitch(driver);
-        //tabSwitchOnParent(driver);
         return new UserTariff();
     }
 

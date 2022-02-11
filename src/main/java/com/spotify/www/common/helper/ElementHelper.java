@@ -10,7 +10,7 @@ public final class ElementHelper {
     private ElementHelper() {
     }
 
-    public static boolean isElementPresent(List<String> expectedElements, List<WebElement> actualElements) {
+    public static boolean isListElementPresent(List<String> expectedElements, List<WebElement> actualElements) {
         boolean check = false;
         for (String expectedElement : expectedElements) {
             check = false;

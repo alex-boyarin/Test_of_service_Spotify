@@ -16,8 +16,8 @@ public class Hooks {
                 .closeCookie();
     }
 
-//    @AfterAll
-//    //public static  void close() {
-//        Driver.close();
-//    }
+    @AfterAll
+    public static void close() {
+        Driver.close();
+    }
 }
