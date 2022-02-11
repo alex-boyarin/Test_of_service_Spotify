@@ -38,7 +38,7 @@ public class UserTariff extends BasePage {
 
     public UserTariff clickCreditAndDebitCardSection() {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(2500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
