@@ -71,5 +71,6 @@ public class MyMedia extends BasePage {
         waiter.waitUntilElementToBeClickable(favoriteTrackSection).click();
         waiter.waitUntilVisibilityOfElementLocated(By.xpath(format(trackContextMenu, trackName))).click();
         waiter.waitUntilVisibilityOfElementLocated(By.xpath(format(actionWithTracks, deleteTrack))).click();
+        return this;
     }
 }

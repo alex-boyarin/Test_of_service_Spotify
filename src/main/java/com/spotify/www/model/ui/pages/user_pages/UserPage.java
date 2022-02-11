@@ -5,6 +5,8 @@ import com.spotify.www.model.ui.pages.base_page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.spotify.www.common.helper.TabSwitch.*;
+
 public class UserPage extends BasePage {
 
     @FindBy(xpath = "//button[@data-testid='user-widget-link']")
@@ -32,18 +34,20 @@ public class UserPage extends BasePage {
 
     public UserAccount clickAccountSection() {
         waiter.waitUntilElementToBeClickable(accountSection).click();
-        TabSwitch.tabSwitch(driver);
+        tabSwitch(driver);
         return new UserAccount();
     }
 
 
     public UserTariff clickTariffChangeSection() {
         waiter.waitUntilElementToBeClickable(tariffChangeSection).click();
-        TabSwitch.tabSwitchOnParent(driver);
+        tabSwitch(driver);
+        //tabSwitchOnParent(driver);
         return new UserTariff();
     }
 
     public UserPage clickLogOutButton() {
+        waiter.waitUntilElementToBeClickable(userLinkButton).click();
         waiter.waitUntilElementToBeClickable(logOutButton).click();
         return this;
     }

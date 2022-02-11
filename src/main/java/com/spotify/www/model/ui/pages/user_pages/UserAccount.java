@@ -12,16 +12,16 @@ import java.util.List;
 
 public class UserAccount extends BasePage {
 
-    private final By USER_DATA = By.xpath("//tbody");
+    private final By USER_DATA = By.xpath("//tbody//td[contains(@class,'StyledValue')]");
 
     @FindBy(id = "overview")
     private WebElement userDataSection;
 
-    public boolean isUserData() {
+    public boolean isUserData(List<String>expectedElement) {
         waiter.waitUntilElementToBeClickable(userDataSection).click();
         Driver.scrollPageUntilElementIsVisible(userDataSection);
-        List<WebElement> userData = driver.findElements(USER_DATA);
-        boolean result = ElementHelper.isElementNotNullNotEmpty(userData);
+        List<WebElement> actualElement = driver.findElements(USER_DATA);
+        boolean result = ElementHelper.isElementPresent(expectedElement,actualElement);
         TabSwitch.tabSwitchOnParent(driver);
         return result;
     }

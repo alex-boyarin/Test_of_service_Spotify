@@ -7,9 +7,14 @@ import com.spotify.www.model.ui.pages.user_pages.UserTariff;
 
 public class ManageAccountSteps {
 
+    public void openPage() {
+        new StartPage()
+                .openPage()
+                .closeCookie();
+    }
+
     public void logIn() {
         new StartPage()
-                .closeCookie()
                 .clickLogInButton()
                 .fillLogInForm()
                 .submit();
@@ -22,9 +27,9 @@ public class ManageAccountSteps {
         return this;
     }
 
-    public boolean isUserData() {
-        return new UserAccount().isUserData();
-    }
+//    public boolean isUserData() {
+//        //return new UserAccount().isUserData();
+//    }
 
     public ManageAccountSteps UserTariffSection() {
         new UserPage()
@@ -42,9 +47,9 @@ public class ManageAccountSteps {
         return this;
     }
 
-    public String getMessageCardNumberError() {
-        return new UserTariff().getMessageCardNumberError();
-    }
+//    public String getMessageCardNumberError() {
+//        return new UserTariff().getMessageCardNumberError();
+//    }
 
     public String getMessageExpiryDateError() {
         return new UserTariff().getMessageExpiryDateError();

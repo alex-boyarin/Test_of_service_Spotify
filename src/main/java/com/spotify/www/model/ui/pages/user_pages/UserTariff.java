@@ -1,5 +1,6 @@
 package com.spotify.www.model.ui.pages.user_pages;
 
+import com.spotify.www.common.helper.TabSwitch;
 import com.spotify.www.model.ui.pages.base_page.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -21,7 +22,7 @@ public class UserTariff extends BasePage {
     @FindBy(id = "security-code")
     private WebElement securityCode;
 
-    @FindBy(id = "checkout_submit")
+    @FindBy(xpath = "//button[contains(text(),'Подписаться на Spotify Premium')]")
     private WebElement buttonSubmit;
 
     @FindBy(id = "cardnumber-error")
@@ -62,7 +63,12 @@ public class UserTariff extends BasePage {
         return waiter.waitUntilElementToBeVisible(cardNumberError).getText();
     }
 
-    public String getMessageExpiryDateError(){
+    public String getMessageExpiryDateError() {
         return waiter.waitUntilElementToBeVisible(expiryDateError).getText();
+    }
+
+    public UserTariff returnedToUserMainPage() {
+        TabSwitch.tabSwitchOnParent(driver);
+        return this;
     }
 }
