@@ -17,11 +17,11 @@ public class UserAccount extends BasePage {
     @FindBy(id = "overview")
     private WebElement userDataSection;
 
-    public boolean isUserData(List<String>expectedElement) {
+    public boolean isUserData(List<String> expectedElement) {
         waiter.waitUntilElementToBeClickable(userDataSection).click();
         Driver.scrollPageUntilElementIsVisible(userDataSection);
         List<WebElement> actualElement = driver.findElements(USER_DATA);
-        boolean result = ElementHelper.isListElementPresent(expectedElement,actualElement);
+        boolean result = ElementHelper.isListElementPresent(expectedElement, actualElement);
         TabSwitch.tabSwitchOnParent(driver);
         return result;
     }

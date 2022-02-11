@@ -64,8 +64,8 @@ public class MediaStepDefs {
     }
 
     @And("User chooses {string} click cancel {string}")
-    public void userChoosesClickCancel(String title, String deleteSinger) {
-        myMedia.deleteSinger(title,deleteSinger);
+    public void userChoosesClickCancel(String titleSinger, String deleteSinger) {
+        myMedia.deleteSinger(titleSinger, deleteSinger);
     }
 
     @And("User click button adds {string} to favorite track {string}")
@@ -85,6 +85,6 @@ public class MediaStepDefs {
 
     @And("User select from list {string} click remove from {string}")
     public void userSelectFromListClickRemove(String trackName, String deleteTrack) {
-        myMedia.deleteTrack(trackName,deleteTrack);
+        myMedia.deleteTrack(trackName, deleteTrack);
     }
 }

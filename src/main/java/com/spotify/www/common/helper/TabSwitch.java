@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class TabSwitch {
-    private static List<String> tabs ;
+    private static List<String> tabs;
 
     private TabSwitch() {
     }

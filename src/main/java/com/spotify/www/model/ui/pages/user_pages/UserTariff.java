@@ -54,11 +54,6 @@ public class UserTariff extends BasePage {
         return this;
     }
 
-    public UserTariff clickButtonSubmit() {
-        waiter.waitUntilElementToBeClickable(buttonSubmit).click();
-        return this;
-    }
-
     public String getMessageCardNumberError() {
         return waiter.waitUntilElementToBeVisible(cardNumberError).getText();
     }

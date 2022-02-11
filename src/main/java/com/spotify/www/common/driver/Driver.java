@@ -21,7 +21,7 @@ public class Driver {
         driver = new ChromeDriver();
         scrollPage = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5,2000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5, 2000));
     }
 
     public static WebDriver getDriver() {

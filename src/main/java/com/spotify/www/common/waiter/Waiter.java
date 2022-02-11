@@ -29,4 +29,8 @@ public class Waiter {
     public WebElement waitUntilVisibilityOfElementLocated(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
+    public WebElement waitUntilPresenceOfElementLocated(By locator) {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
 }

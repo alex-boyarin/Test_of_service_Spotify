@@ -36,6 +36,7 @@ public final class ElementHelper {
         }
         return true;
     }
+
     public static boolean isElementPresent(By locator) {
         return !(Driver.getDriver().findElements(locator).isEmpty());
     }

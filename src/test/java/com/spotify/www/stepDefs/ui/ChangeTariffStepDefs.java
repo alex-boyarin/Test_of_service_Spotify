@@ -4,9 +4,8 @@ import com.spotify.www.model.ui.pages.user_pages.UserPage;
 import com.spotify.www.model.ui.pages.user_pages.UserTariff;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.junit.jupiter.api.Assertions;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ChangeTariffStepDefs {
     private UserPage userPage = new UserPage();
@@ -40,7 +39,7 @@ public class ChangeTariffStepDefs {
 
     @Then("User should see message expiry date error {string}")
     public void userShouldSeeMessageExpiryDateError(String expectedMessage) {
-        assertEquals(expectedMessage,userTariff.getMessageExpiryDateError());
+        assertEquals(expectedMessage, userTariff.getMessageExpiryDateError());
     }
 
     @And("User is returned to user's main page")

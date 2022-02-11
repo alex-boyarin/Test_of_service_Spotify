@@ -8,12 +8,12 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static java.lang.String.*;
+import static java.lang.String.format;
 
 public class MyMedia extends BasePage {
 
     private String title = "//a[@title='%s']";//Bohemian Rhapsody (The Original Soundtrack)  //Rammstein
-    private String titleSinger = "//a[@title='%s']";
+    private String titleTrack = "//div[contains(text(),'%s')]";//Родина
     private String trackContextMenu = "//button[@type='button' and contains(@aria-label,'%s')]";//Родина
     private String albumAction = "//div[@data-testid='action-bar-row']/child::button[@aria-label='%s']";//Удалить из медиатеки /Добавить в медиатеку
     private String subscriptionActionForSinger = "//button[contains(text(),'%s')]";//Подписаться /подписка
@@ -52,9 +52,8 @@ public class MyMedia extends BasePage {
         return this;
     }
 
-
-    public MyMedia deleteAlbum(String title, String deleteAlbum) {
-        waiter.waitUntilVisibilityOfElementLocated(By.xpath(format(this.title, title))).click();
+    public MyMedia deleteAlbum(String titleAlbum, String deleteAlbum) {
+        waiter.waitUntilVisibilityOfElementLocated(By.xpath(format(title, titleAlbum))).click();
         waiter.waitUntilVisibilityOfElementLocated(By.xpath(format(albumAction, deleteAlbum))).click();
         return this;
     }
@@ -64,8 +63,8 @@ public class MyMedia extends BasePage {
         return this;
     }
 
-    public MyMedia deleteSinger(String title, String deleteSinger) {
-        waiter.waitUntilVisibilityOfElementLocated(By.xpath(format(this.title, title))).click();
+    public MyMedia deleteSinger(String titleSinger, String deleteSinger) {
+        waiter.waitUntilVisibilityOfElementLocated(By.xpath(format(title, titleSinger))).click();
         waiter.waitUntilVisibilityOfElementLocated(By.xpath(format(subscriptionActionForSinger, deleteSinger))).click();
         return this;
     }
@@ -76,8 +75,9 @@ public class MyMedia extends BasePage {
     }
 
     public MyMedia deleteTrack(String trackName, String deleteTrack) {
+        waiter.waitUntilVisibilityOfElementLocated(By.xpath(format(titleTrack, trackName))).click();
         waiter.waitUntilVisibilityOfElementLocated(By.xpath(format(trackContextMenu, trackName))).click();
-        waiter.waitUntilVisibilityOfElementLocated(By.xpath(format(actionWithTracks, deleteTrack))).click();
+        waiter.waitUntilPresenceOfElementLocated(By.xpath(format(actionWithTracks, deleteTrack))).click();
         return this;
     }
 

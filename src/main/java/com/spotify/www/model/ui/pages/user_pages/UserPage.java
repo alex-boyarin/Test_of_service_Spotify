@@ -50,7 +50,7 @@ public class UserPage extends BasePage {
         return this;
     }
 
-    public Search searchSection()  {
+    public Search searchSection() {
         waiter.waitUntilElementToBeVisible(searchSection).click();
         return new Search();
     }
