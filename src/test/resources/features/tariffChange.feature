@@ -2,7 +2,7 @@ Feature: Сhange of tariff using an invalid card
 
   Scenario: Using invalid card number
     When User click login button
-    And User fills out the email and password form
+    And User fills out the "email" and "password" form
     And User click submit button
     And User opens tariff section
     And User click button begin
@@ -14,7 +14,7 @@ Feature: Сhange of tariff using an invalid card
 
   Scenario: Using card expiration date is invalid
     When User click login button
-    And User fills out the email and password form
+    And User fills out the "email" and "password" form
     And User click submit button
     And User opens tariff section
     And User click button begin

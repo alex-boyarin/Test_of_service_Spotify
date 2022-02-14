@@ -2,7 +2,7 @@ Feature: User adds music to the library
 
   Scenario: User adds album to library
     When User click login button
-    And User fills out the email and password form
+    And User fills out the "email" and "password" form
     And User click submit button
     And User click section search
     And User enters "Bohemian Rhapsody (The Original Soundtrack)"
@@ -16,7 +16,7 @@ Feature: User adds music to the library
 
   Scenario: User adds singer to library
     When User click login button
-    And User fills out the email and password form
+    And User fills out the "email" and "password" form
     And User click submit button
     And User click section search
     And User enters "Rammstein"
@@ -30,7 +30,7 @@ Feature: User adds music to the library
 
   Scenario: User adds song to favorite track section
     When User click login button
-    And User fills out the email and password form
+    And User fills out the "email" and "password" form
     And User click submit button
     And User click section search
     And User enters "Родина"

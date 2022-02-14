@@ -7,6 +7,8 @@ import com.spotify.www.model.ui.pages.user_pages.UserPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.List;
@@ -17,14 +19,15 @@ public class CommonUserDataStepsDefs {
     private UserPage userPage = new UserPage();
     private UserAccount userAccount = new UserAccount();
 
+    @Step("User click login button")
     @When("User click login button")
     public void userClickLoginButton() {
         startPage.clickLogInButton();
     }
 
-    @And("User fills out the email and password form")
-    public void userFillsOutTheEmailAndPasswordForm() {
-        logInPage.fillLogInForm();
+    @And("User fills out the {string} and {string} form")
+    public void userFillsOutTheEmailAndPasswordForm(String email, String password) {
+        logInPage.fillLogInForm(email, password);
     }
 
     @And("User click submit button")
@@ -39,6 +42,7 @@ public class CommonUserDataStepsDefs {
 
     }
 
+    @Description("User should see all his data")
     @Then("User should see all his data")
     public void userShouldSeeAllHisData(List<String> expectedElement) {
         Assertions.assertTrue(userAccount.isUserData(expectedElement));

@@ -7,21 +7,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LogInPage extends BasePage {
-    private final String USER_EMAIL = "email";
-    private final String PASSWORD = "password";
     @FindBy(id = "login-username")
     private WebElement userEmail;
     @FindBy(id = "login-password")
-    private WebElement password;
+    private WebElement userPassword;
     @FindBy(id = "login-button")
     private WebElement enterButton;
 
 
-    public LogInPage fillLogInForm() {
+    public LogInPage fillLogInForm(String email, String password) {
         waiter.waitUntilElementToBeVisible(userEmail).clear();
-        userEmail.sendKeys(PropertiesUtil.get(USER_EMAIL));
-        waiter.waitUntilElementToBeVisible(password).clear();
-        password.sendKeys(PropertiesUtil.get(PASSWORD));
+        userEmail.sendKeys(PropertiesUtil.get(email));
+        waiter.waitUntilElementToBeVisible(userPassword).clear();
+        userPassword.sendKeys(PropertiesUtil.get(password));
         return this;
     }
 
