@@ -28,11 +28,6 @@
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         -Dcucumber.plugin="io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
                     </argLine>
-<!--                    <systemPropertyVariables>-->
-<!--                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>-->
-<!--                        <allure.link.issue.pattern>https://example.org/browse/{}</allure.link.issue.pattern>-->
-<!--                        <allure.link.tms.pattern>https://example.org/browse/{}</allure.link.tms.pattern>-->
-<!--                    </systemPropertyVariables>-->
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
@@ -57,8 +52,6 @@
                     <reportVersion>2.17.1</reportVersion>
                 </configuration>
             </plugin>
-
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
@@ -75,9 +68,6 @@
             </plugin>
         </plugins>
     </build>
-
-
-
     <dependencies>
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -104,60 +94,35 @@
             <artifactId>webdrivermanager</artifactId>
             <version>4.4.3</version>
         </dependency>
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.1.2</version>
         </dependency>
-
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>7.1.0</version>
         </dependency>
-
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>7.1.0</version>
         </dependency>
-
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>gherkin</artifactId>
             <version>22.0.0</version>
         </dependency>
-
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>4.4.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>5.8.1</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
