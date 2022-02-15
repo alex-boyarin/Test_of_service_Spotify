@@ -9,5 +9,4 @@ Feature: Checking the availability of user data in the personal account
       | alex25091986@gmail.com |
       | 24 сентября 1986 г.    |
       | Беларусь               |
-    And User logout
 

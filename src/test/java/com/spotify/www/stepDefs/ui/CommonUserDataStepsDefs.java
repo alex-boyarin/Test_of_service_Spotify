@@ -7,8 +7,6 @@ import com.spotify.www.model.ui.pages.user_pages.UserPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.qameta.allure.Description;
-import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.List;
@@ -19,7 +17,6 @@ public class CommonUserDataStepsDefs {
     private UserPage userPage = new UserPage();
     private UserAccount userAccount = new UserAccount();
 
-    @Step("User click login button")
     @When("User click login button")
     public void userClickLoginButton() {
         startPage.clickLogInButton();
@@ -39,17 +36,10 @@ public class CommonUserDataStepsDefs {
     public void userOpensAccountSection() {
         userPage.clickUserLinkButton()
                 .clickAccountSection();
-
     }
 
-    @Description("User should see all his data")
     @Then("User should see all his data")
     public void userShouldSeeAllHisData(List<String> expectedElement) {
         Assertions.assertTrue(userAccount.isUserData(expectedElement));
-    }
-
-    @And("User logout")
-    public void userLogout() {
-        userPage.clickLogOutButton();
     }
 }
