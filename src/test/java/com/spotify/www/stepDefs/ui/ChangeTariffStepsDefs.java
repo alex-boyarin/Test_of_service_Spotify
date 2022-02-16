@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ChangeTariffStepDefs {
+public class ChangeTariffStepsDefs {
     private UserPage userPage = new UserPage();
     private UserTariff userTariff = new UserTariff();
 

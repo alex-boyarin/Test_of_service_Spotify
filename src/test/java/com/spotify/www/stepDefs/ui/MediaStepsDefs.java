@@ -7,7 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 
-public class MediaStepDefs {
+public class MediaStepsDefs {
     UserPage userPage = new UserPage();
     Search search = new Search();
     MyMedia myMedia = new MyMedia();
@@ -83,8 +83,4 @@ public class MediaStepDefs {
         myMedia.listTracksIsNotEmpty();
     }
 
-    @And("User select from list {string} click remove from {string}")
-    public void userSelectFromListClickRemove(String trackName, String deleteTrack) {
-        myMedia.deleteTrack(trackName, deleteTrack);
-    }
 }

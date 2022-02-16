@@ -9,8 +9,10 @@ import org.openqa.selenium.support.FindBy;
 public class LogInPage extends BasePage {
     @FindBy(id = "login-username")
     private WebElement userEmail;
+
     @FindBy(id = "login-password")
     private WebElement userPassword;
+
     @FindBy(id = "login-button")
     private WebElement enterButton;
 
