@@ -47,7 +47,7 @@ public class MediaStepsDefs {
         Assertions.assertTrue(myMedia.mediaContainerIsNotEmpty());
     }
 
-    @And("User chooses {string} click {string}")
+    @Then("User chooses {string} click {string}")
     public void userChoosesClick(String title, String deleteAlbum) {
         myMedia.deleteAlbum(title, deleteAlbum);
     }
@@ -63,7 +63,7 @@ public class MediaStepsDefs {
         myMedia.singerSection();
     }
 
-    @And("User chooses {string} click cancel {string}")
+    @Then("User chooses {string} click cancel {string}")
     public void userChoosesClickCancel(String titleSinger, String deleteSinger) {
         myMedia.deleteSinger(titleSinger, deleteSinger);
     }
@@ -83,4 +83,8 @@ public class MediaStepsDefs {
         myMedia.listTracksIsNotEmpty();
     }
 
+    @Then("User select from list {string} click remove from {string}")
+    public void userSelectFromListClickRemove(String trackName, String deleteTrack) {
+        myMedia.deleteTrack(trackName, deleteTrack);
+    }
 }

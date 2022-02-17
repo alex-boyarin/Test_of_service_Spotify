@@ -6,7 +6,7 @@ Feature: User removes music from library
     And User click submit button
     And User click section my media
     And User click section album
-    And User chooses "<album>" click "Удалить из медиатеки"
+    Then User chooses "<album>" click "Удалить из медиатеки"
     Examples:
       | album       |
       | Просвистела |
@@ -18,4 +18,12 @@ Feature: User removes music from library
     And User click submit button
     And User click section my media
     And User click section singer
-    And User chooses "Rammstein" click cancel "Подписка"
+    Then User chooses "Rammstein" click cancel "Подписка"
+
+  Scenario: User removes song to favorite track section
+    When User click login button
+    And User fills out the "email" and "password" form
+    And User click submit button
+    And User click section my media
+    And User click section my favorite track
+    Then User select from list "Родина" click remove from "Удалить из любимых треков"
